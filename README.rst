@@ -139,8 +139,8 @@ Fine on Plone 4.3, 5.0, 5.1.
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/experimental.publishtraverse/issues
-- Source Code: https://github.com/collective/experimental.publishtraverse
+- Issue Tracker: https://github.com/plone/experimental.publishtraverse/issues
+- Source Code: https://github.com/plone/experimental.publishtraverse
 
 
 License
