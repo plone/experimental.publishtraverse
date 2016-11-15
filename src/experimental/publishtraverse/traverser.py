@@ -11,7 +11,7 @@ except ImportError:
 
 # This is from ZPublisher.BaseRequest:
 try:
-    from AccessControl.ZopeSecurityPolicy import getRoles
+    from AccessControl.ZopeSecurityPolicy import getRoles  # noqa P001
 except ImportError:
     def getRoles(container, name, value, default):
         return getattr(value, '__roles__', default)

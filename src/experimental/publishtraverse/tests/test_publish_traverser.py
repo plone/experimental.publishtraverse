@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from DateTime import DateTime
 from experimental.publishtraverse import testing
+from plone import api
 from plone.app.testing import logout
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -31,8 +32,8 @@ class TestStandard(unittest.TestCase):
         # Test a few locations that definitely need to remain publishable.
         portal = self.layer['portal']
         setRoles(portal, TEST_USER_ID, ['Manager'])
-        portal.invokeFactory('Folder', id='folder')
-        portal.invokeFactory('Document', id='page')
+        api.content.create(container=portal, type='Folder', id='folder')
+        api.content.create(container=portal, type='Document', id='page')
         folder = portal.folder
         page = portal.page
         logout()

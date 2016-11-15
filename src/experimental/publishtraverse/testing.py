@@ -4,7 +4,6 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
-from zope.configuration import xmlconfig
 
 import pkg_resources
 
@@ -29,9 +28,7 @@ class StandardLayer(PloneSandboxLayer):
             # prepare installing plone.app.contenttypes
             z2.installProduct(app, 'Products.DateRecurringIndex')
             import plone.app.contenttypes
-            xmlconfig.file('configure.zcml',
-                           plone.app.contenttypes,
-                           context=configurationContext)
+            self.loadZCML(package=plone.app.contenttypes)
 
     def setUpPloneSite(self, portal):
         super(StandardLayer, self).setUpPloneSite(portal)
@@ -53,9 +50,7 @@ class ExperimentalLayer(StandardLayer):
         super(ExperimentalLayer, self).setUpZope(app, configurationContext)
         # Load ZCML
         import experimental.publishtraverse
-        xmlconfig.file('configure.zcml',
-                       experimental.publishtraverse,
-                       context=configurationContext)
+        self.loadZCML(package=experimental.publishtraverse)
 
 
 EXPERIMENTAL_FIXTURE = ExperimentalLayer()

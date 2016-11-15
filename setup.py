@@ -41,8 +41,13 @@ setup(
     install_requires=[
         'setuptools',
         'Plone',
-        'plone.app.testing',
     ],
+    extras_require={
+        'test': [
+            'plone.app.testing',
+            'plone.api',
+        ],
+    },
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
