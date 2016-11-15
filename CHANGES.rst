@@ -15,7 +15,9 @@ New features:
 
 Bug fixes:
 
-- *add item here*
+- Added ``test`` extra and improved code quality of package,
+  with help of plone.app.codeanalysis.
+  [maurits]
 
 
 1.0 (2016-09-28)
