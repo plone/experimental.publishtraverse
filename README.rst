@@ -110,6 +110,13 @@ The package looks for these environment variables:
     when an object with a name in the known names is published, we accept it without further checks.
     Default: true.
 
+``EXPERIMENTAL_PUBLISH_TRAVERSE_ACCEPT_IF_ONLY_FOR_ADMINS``
+    When this is set, if the publishable object is not protected but its container is *only* accessible for admins, we accept it anyway.
+    This can happen if its class has ``security.declareObjectProtected(ManagePortal)``,
+    like happens when you use the permissions form of a workflow state in the ZMI.
+    An admin in this case is someone with role Manager or Site Administrator.
+    Default: true.
+
 Accepted True values are: ``true``, ``t``, ``1``, ``yes``, ``y``.
 
 The defaults are intended to be reasonable for the latest official Plone versions, but the defaults may change.

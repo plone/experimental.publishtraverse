@@ -11,7 +11,13 @@ Breaking changes:
 
 New features:
 
-- *add item here*
+- Publish objects when their containers are only accessible for admins.
+  You do that with ``security.declareObjectProtected(ManagePortal)``.
+  This fixes setting permissions for a workflow state.
+  You can turn this off by setting the new option
+  ``EXPERIMENTAL_PUBLISH_TRAVERSE_ACCEPT_IF_ONLY_FOR_ADMINS``
+  to false.
+  [maurits]
 
 Bug fixes:
 
