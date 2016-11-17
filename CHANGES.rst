@@ -5,10 +5,6 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-Breaking changes:
-
-- *add item here*
-
 New features:
 
 - Publish objects when their containers are only accessible for admins.
